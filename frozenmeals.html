@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frozen Ready-to-Eat Meals | KnowYourFoods</title>
+
+  <style>
+    :root{
+      --green:#1f7a4c;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --soft:#f7faf8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background:#fff;
+    }
+    .topbar{
+      position: sticky;
+      top:0;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .topbar-inner{
+      max-width: 1000px;
+      margin:0 auto;
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:10px;}
+    .brand img{
+      width:40px;height:40px;border-radius:999px;object-fit:cover;
+      border:2px solid #d1fae5;
+    }
+    .brand b{color:var(--green)}
+    .crumbs{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:center;}
+    .crumbs a{color:var(--green);text-decoration:none;font-weight:800}
+    .crumbs a:hover{text-decoration:underline}
+
+    .container{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 22px 16px 70px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      overflow:hidden;
+    }
+    .hero-img{
+      height: 220px;
+      background: linear-gradient(135deg, #e8f5ff, #ffffff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 70px;
+    }
+    .hero-body{padding:16px;}
+    h1{margin:0 0 8px;font-size:34px;}
+    p{margin:0;color:var(--muted);line-height:1.7;}
+
+    .badges{padding:16px;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background: var(--soft);
+      font-size:13px;font-weight:800;color:#14532d;
+      white-space:nowrap;
+    }
+
+    .section{padding:16px;margin-top:16px;}
+    .section h2{margin:0 0 10px;font-size:20px;color:var(--green);}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      border:1px solid var(--line);
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+    }
+    th,td{
+      padding:12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      font-size:14px;
+    }
+    th{background:var(--soft);font-weight:900;}
+    tr:last-child td{border-bottom:none;}
+
+    .note{margin-top:10px;font-size:13px;color:var(--muted);}
+    .tip{
+      margin-top:12px;
+      padding:12px 14px;
+      background:#e9fff0;
+      border:1px solid #a7f3d0;
+      border-radius:12px;
+      color:#14532d;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .footer{
+      margin-top: 26px;
+      border-top:1px solid var(--line);
+      padding-top: 16px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:30px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="images/logo.png" alt="KnowYourFoods logo">
+        <div>
+          <b>KnowYourFoods</b><br>
+          <span style="font-size:12px;color:var(--muted);">Raising Awareness of Everyday Foods and Healthier Alternatives</span>
+        </div>
+      </div>
+
+      <div class="crumbs">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Frozen Ready-to-Eat Meals</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="grid">
+      <div class="card">
+        <div class="hero-img">🧊</div>
+        <div class="hero-body">
+          <h1>Frozen Ready-to-Eat Meals</h1>
+          <p>
+            Frozen ready-to-eat meals are pre-prepared foods that only require reheating
+            in a microwave or oven. They are convenient and save time, but many frozen
+            meals contain preservatives, added sodium, and processed ingredients.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="badges">
+          <div class="badge">⚙️ Processed Ingredients</div>
+          <div class="badge">🧂 High Sodium</div>
+          <div class="badge">🧊 Preserved for Storage</div>
+          <div class="badge">🔥 Moderate Calories</div>
+          <div class="badge">✅ Better Choice: Fresh Homemade Meals</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section">
+      <h2>What are Frozen Ready-to-Eat Meals?</h2>
+      <p>
+        Frozen ready-to-eat meals are packaged foods that are cooked, frozen,
+        and stored for long periods. Examples include frozen pasta, rice meals,
+        microwave dinners, and frozen fried foods. Freezing helps preserve food,
+        but some products may contain additives and higher sodium levels.
+      </p>
+    </div>
+
+    <div class="card section">
+      <h2>Nutritional Overview</h2>
+      <p class="note"><b>Typical Frozen Meal (1 serving, approximate values)</b></p>
+      <table>
+        <thead>
+          <tr><th>Nutrient</th><th>Approx. Amount</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Calories</td><td>300–450 kcal</td></tr>
+          <tr><td>Protein</td><td>12–18 g</td></tr>
+          <tr><td>Total Fat</td><td>12–20 g</td></tr>
+          <tr><td>Saturated Fat</td><td>4–7 g</td></tr>
+          <tr><td>Carbohydrates</td><td>35–50 g</td></tr>
+          <tr><td>Sugar</td><td>4–8 g</td></tr>
+          <tr><td>Sodium</td><td>700–1200 mg</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><b>Note:</b> Some frozen meals contain preservatives and high sodium to maintain flavor and shelf life.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Calories Comparison</h2>
+      <table>
+        <thead>
+          <tr><th>Food Option</th><th>Calories (Approx.)</th><th>Why it’s better/worse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🧊 Frozen ready-to-eat meal</td><td>300–450 kcal</td><td>Often high sodium and processed</td></tr>
+          <tr><td>🍲 Homemade meal</td><td>300–400 kcal</td><td>More control over ingredients</td></tr>
+          <tr><td>🥗 Fresh vegetable bowl</td><td>200–350 kcal</td><td>Higher fiber and nutrients</td></tr>
+          <tr><td>🍗 Grilled chicken with rice</td><td>350–450 kcal</td><td>Balanced protein and carbohydrates</td></tr>
+        </tbody>
+      </table>
+      <div class="tip"><b>Tip:</b> Adding fresh vegetables to frozen meals can improve nutritional balance.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Health Considerations</h2>
+      <p>
+        Frozen ready-to-eat meals can be convenient, especially for busy schedules,
+        but relying on them too often may increase sodium and processed food intake.
+        Preparing fresh meals when possible can help provide more nutrients and
+        balanced ingredients.
+      </p>
+      <div class="tip"><b>Balanced eating tip:</b> Choose frozen meals with lower sodium and add vegetables for better nutrition.</div>
+    </div>
+
+    <div class="footer">© 2026 KnowYourFoods.com | Adventist Academy Cebu</div>
+  </div>
+</body>
+</html>

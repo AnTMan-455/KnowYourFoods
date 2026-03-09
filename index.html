@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KnowYourFoods.com</title>
+
+  <style>
+    :root{
+      --green:#1f7a4c;
+      --green2:#3aa76d;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --bg:#ffffff;
+      --soft:#f7faf8;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+    }
+
+    /* ===== Top bar (like your screenshot) ===== */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      gap: 16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 260px;
+    }
+    .brand img{
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 2px solid #d1fae5;
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .brand-name{
+      font-weight: 800;
+      color: var(--green);
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .brand-motto{
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .spacer{ flex:1; }
+
+    .search-wrap{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      width: min(520px, 100%);
+    }
+
+    .search{
+      position:relative;
+      width: 100%;
+    }
+    .search input{
+      width:100%;
+      padding: 10px 42px 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      outline: none;
+      font-size: 14px;
+      background: #fff;
+    }
+    .search input:focus{
+      border-color: #a7f3d0;
+      box-shadow: 0 0 0 3px rgba(16,185,129,0.18);
+    }
+    .search button{
+      position:absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 16px;
+      color: var(--muted);
+      padding: 6px 8px;
+      border-radius: 8px;
+    }
+    .search button:hover{
+      background: #f3f4f6;
+    }
+
+    /* ===== Page layout ===== */
+    .container{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 26px 16px 70px;
+    }
+
+    /* Hero/title area like your 2nd image (simple) */
+    .hero{
+      padding: 26px 0 8px;
+      text-align:center;
+    }
+    .hero h1{
+      margin: 0;
+      font-size: clamp(30px, 4vw, 54px);
+      letter-spacing: .3px;
+    }
+    .hero p{
+      margin: 12px auto 0;
+      max-width: 840px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* Results dropdown area */
+    .results{
+      max-width: 780px;
+      margin: 18px auto 0;
+      text-align:left;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow:hidden;
+      display:none;
+      background:#fff;
+    }
+    .results .row{
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .results .row:last-child{ border-bottom:none; }
+    .pill{
+      font-size:12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #e9fff0;
+      color: #11643c;
+      font-weight: 700;
+      white-space:nowrap;
+      margin-top:2px;
+    }
+    .result-title{
+      font-weight: 800;
+      margin: 0;
+      color: var(--ink);
+    }
+    .result-sub{
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .results a{
+      text-decoration:none;
+      color: inherit;
+      display:block;
+    }
+    .results a:hover .row{
+      background: var(--soft);
+    }
+
+    /* Categories section like your 3rd image */
+    .section-title{
+      margin: 36px 0 10px;
+      font-size: 22px;
+      letter-spacing: .2px;
+    }
+    .section-sub{
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .tile{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+      transition: transform .15s ease;
+    }
+    .tile:hover{ transform: translateY(-3px); }
+
+    .tile-img{
+      height:180px;
+      overflow:hidden;
+    }
+
+    .tile-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .tile:hover .tile-img img{
+        transform: scale(1.08);
+    }
+    .tile-body{
+      padding: 14px;
+    }
+    .tile-body h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .tile-body p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .open-btn{
+      margin-top: 12px;
+      display:inline-block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--green2);
+      color: #fff;
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 13px;
+      cursor:pointer;
+      border:none;
+    }
+    .open-btn:hover{ background: var(--green); }
+
+    /* Category detail list */
+    .category-detail{
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      background: var(--soft);
+      display:none;
+    }
+    .category-detail h4{
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--green);
+    }
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+    }
+    .chip{
+      background:#fff;
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      display:flex;
+      gap: 8px;
+      align-items:center;
+    }
+    .chip b{ font-size: 13px; }
+    .chip a{
+      margin-left: 6px;
+      font-weight: 800;
+      color: var(--green);
+      text-decoration:none;
+    }
+    .chip a:hover{ text-decoration: underline; }
+
+    footer{
+      margin-top: 44px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: auto; }
+      .search-wrap{ width: 100%; }
+      .topbar-inner{ flex-wrap:wrap; }
+      .spacer{ display:none; }
+    }
+
+    /* ===== Fun Facts Carousel ===== */
+.funfacts{
+  margin: 26px 0 18px;
+}
+
+.funfacts-head{
+  text-align: left;
+  max-width: 1100px;
+}
+
+.carousel{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  gap: 10px;
+  align-items: center;
+}
+
+.car-btn{
+  height: 44px;
+  width: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+  transition: transform .12s ease;
+}
+
+.car-btn:hover{
+  transform: translateY(-2px);
+}
+
+.car-viewport{
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+}
+
+.car-track{
+  display: flex;
+  gap: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.ff-card{
+  min-width: 100%;
+  max-width: 100%;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: none;
+  flex: 0 0 100%;
+}
+
+.ff-img{
+  height: 240px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.ff-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+.ff-card:hover .ff-img img{
+  transform: scale(1.06);
+}
+
+.ff-body{
+  padding: 12px 14px 14px;
+}
+
+.ff-badge{
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 900;
+  color: #11643c;
+  background: #e9fff0;
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.ff-title{
+  margin: 10px 0 6px;
+  font-size: 16px;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.ff-text{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 13px;
+}
+
+/* Mobile */
+@media (max-width: 700px){
+  .carousel{
+    grid-template-columns: 38px 1fr 38px;
+  }
+  .car-btn{
+    height: 38px;
+    width: 38px;
+    border-radius: 10px;
+  }
+  .ff-card{
+    min-width: 270px;
+    max-width: 270px;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <!-- Change to logo.png if your file is PNG -->
+        <img src="images/logo.png" alt="KnowYourFoods Logo">
+        <div class="brand-text">
+          <div class="brand-name">KnowYourFoods</div>
+          <div class="brand-motto">Raising Awareness of Everyday Foods and Healthier Alternatives</div>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="search-wrap">
+        <div class="search">
+          <input id="searchInput" type="text" placeholder="Search for your food (e.g., fries, burger, milk tea)">
+          <button id="searchBtn" aria-label="search">🔎</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Title section (simple, fused paragraph like your 2nd image) -->
+    <section class="hero">
+      <h1>Know what you eat.</h1>
+      <p>
+        KnowYourFoods.com helps students and the public understand what common foods contain (calories, fats, sugars, sodium, and preservatives),
+        how these foods can affect health when consumed too often, and what healthier alternatives you can choose to support a better lifestyle.
+      </p>
+
+      <div id="results" class="results"></div>
+    </section>
+<!-- Fun Facts Carousel -->
+<section class="funfacts">
+  <div class="funfacts-head">
+    <h2 class="section-title" style="margin:0;">Fun Facts!</h2>
+    <p class="section-sub" style="margin:6px 0 0;">
+      Quick food facts to raise awareness — swipe or use the arrows.
+    </p>
+  </div>
+
+  <div class="carousel">
+    <button class="car-btn left" id="ffPrev" aria-label="Previous fun fact">‹</button>
+
+    <div class="car-viewport" id="ffViewport">
+      <div class="car-track" id="ffTrack">
+        <!-- Cards are generated by JavaScript -->
+      </div>
+    </div>
+
+    <button class="car-btn right" id="ffNext" aria-label="Next fun fact">›</button>
+  </div>
+</section>
+
+    <!-- Categories -->
+    <h2 class="section-title">What are you searching for?</h2>
+    <p class="section-sub">Browse by category or use the search bar above.</p>
+
+    <section class="grid" id="categoryGrid">
+      <!-- Filled by JavaScript -->
+    </section>
+
+    <section class="category-detail" id="categoryDetail">
+      <!-- Filled by JavaScript -->
+    </section>
+
+    <footer>
+      © 2026 KnowYourFoods.com | Adventist Academy Cebu
+    </footer>
+  </div>
+
+  <script>
+    // === Your categories + foods (exactly what you listed) ===
+    const DATA = [
+      {
+        id: "fast-food",
+        title: "Fast Food Items",
+        image: "images/fastfood.jpg",
+        desc: "Popular fast foods people often eat.",
+        items: [
+          "Burgers",
+          "Fried chicken",
+          "French fries",
+          "Pizza",
+          "Hotdogs",
+          "Shawarma (with lots of mayo)",
+          "Nuggets",
+          "Onion rings"
+        ]
+      },
+      {
+        id: "instant-processed",
+        title: "Instant / Processed Foods",
+        image: "images/processed.jpg",
+        desc: "Convenient foods that are often high in sodium/preservatives.",
+        items: [
+          "Instant noodles",
+          "Canned meat",
+          "Processed ham / bacon",
+          "Frozen ready-to-eat meals"
+        ]
+      },
+      {
+        id: "refined-carbs",
+        title: "Refined Carb Foods",
+        image: "images/carbs.jpg",
+        desc: "Carb-heavy foods that may spike blood sugar.",
+        items: [
+          "White bread",
+          "Sugary cereals",
+          "Pastries (croissants, donuts)",
+          "Cakes",
+          "Pancakes with syrup"
+        ]
+      },
+      {
+        id: "street-snacks",
+        title: "Street / Snack Foods",
+        image: "images/street.jpg",
+        desc: "Common snacks, often deep fried and salty.",
+        items: [
+          "Fish balls / kikiam (deep fried)",
+          "Fries from street vendors",
+          "Chicharon",
+          "Cheese sticks"
+        ]
+      },
+      {
+        id: "sugary-drinks",
+        title: "Sugary Foods & Drinks",
+        image: "images/drinks.jpg",
+        desc: "Sweet drinks that can be high in sugar.",
+        items: [
+          "Milk tea",
+          "Soft drinks",
+          "Iced coffee with syrup",
+          "Packaged fruit juices",
+          "Energy drinks"
+        ]
+      },
+      {
+        id: "sweet-treats",
+        title: "Sweet Treats",
+        image: "images/sweets.jpg",
+        desc: "Desserts and sweets eaten for cravings.",
+        items: [
+          "Ice cream",
+          "Chocolate bars",
+          "Candy",
+          "Sweetened yogurt"
+        ]
+      }
+    ];
+
+    const grid = document.getElementById("categoryGrid");
+    const detail = document.getElementById("categoryDetail");
+    const results = document.getElementById("results");
+    const input = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+
+    // Build category tiles
+    function renderGrid(){
+      grid.innerHTML = "";
+      DATA.forEach(cat => {
+        const tile = document.createElement("div");
+        tile.className = "tile";
+        tile.innerHTML = `
+          <div class="tile-img">
+            <img src="${cat.image}" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+            
+          <div class="tile-body">
+            <h3>${cat.title}</h3>
+            <p>${cat.desc}</p>
+            <button class="open-btn" data-id="${cat.id}">Open</button>
+        </div>
+        `;
+        grid.appendChild(tile);
+      });
+
+      // Button listeners
+      document.querySelectorAll(".open-btn").forEach(btn => {
+        btn.addEventListener("click", () => openCategory(btn.dataset.id));
+      });
+    }
+function getFoodLink(itemName){
+
+const map = {
+  "Burgers": "burger.html",
+  "Fried chicken": "friedchicken.html",
+  "French fries": "fries.html",
+  "Pizza": "pizza.html",
+  "Hotdogs": "hotdogs.html",
+  "Shawarma (with lots of mayo)": "shawarma.html",
+  "Nuggets": "nuggets.html",
+  "Onion rings": "onionrings.html",
+  "Instant noodles": "instantnoodles.html",
+  "Canned meat": "cannedmeat.html", 
+  "Processed ham / bacon": "processedham.html",
+  "Frozen ready-to-eat meals":"frozenmeals.html",
+  "White bread": "whitebread.html",
+  "Sugary cereals": "sugarycereals.html",
+  "Pastries (croissants, donuts)": "pastries.html",
+  "Cakes": "cakes.html",
+  "Pancakes with syrup": "pancakes.html",
+  "Fish balls / kikiam (deep fried)": "fishballs.html",
+  "Fries from street vendors": "streetfries.html",
+  "Chicharon": "chicharon.html",
+  "Cheese sticks": "cheesesticks.html",
+  "Milk tea": "milktea.html",
+  "Soft drinks": "softdrinks.html",
+  "Iced coffee with syrup": "icedcoffee.html",
+  "Packaged fruit juices": "packedjuice.html",
+  "Energy drinks": "enegrydrinks.html",
+  "Ice cream": "icecream.html", 
+  "Chocolate bars": "chocolatebars.html",
+  "Candy": "candy.html",
+  "Sweetened yogurt": "sweetenedyogurt.html"
+};  
+
+return map[itemName] || "#";
+
+}
+    function openCategory(catId){
+      const cat = DATA.find(c => c.id === catId);
+      if(!cat) return;
+
+      detail.style.display = "block";
+      detail.innerHTML = `
+        <h4 style="display:flex;align-items:center;gap:10px;">
+  <img src="${cat.image}" alt="" style="width:40px;height:40px;border-radius:10px;object-fit:cover;border:1px solid var(--line);">
+  ${cat.title}
+</h4>
+        <div class="chips">
+          ${cat.items.map(item => `
+            <div class="chip">
+              <b>${escapeHtml(item)}</b>
+              <!-- placeholder link (you can replace later with real pages) -->
+              <a href="${getFoodLink(item)}">view</a>
+            </div>
+          `).join("")}
+        </div>
+      `;
+
+      // scroll to detail area smoothly
+      detail.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    // Search across all foods
+    function searchFoods(){
+      const q = input.value.trim().toLowerCase();
+      if(!q){
+        results.style.display = "none";
+        results.innerHTML = "";
+        return;
+      }
+
+      const matches = [];
+      DATA.forEach(cat => {
+        cat.items.forEach(item => {
+          if(item.toLowerCase().includes(q)){
+            matches.push({ catId: cat.id, catTitle: cat.title, item });
+          }
+        });
+      });
+
+      if(matches.length === 0){
+        results.style.display = "block";
+        results.innerHTML = `
+          <a href="#">
+            <div class="row">
+              <span class="pill">No match</span>
+              <div>
+                <p class="result-title">No results found 😅</p>
+                <p class="result-sub">Try another keyword (example: burger, fries, milk tea).</p>
+              </div>
+            </div>
+          </a>
+        `;
+        return;
+      }
+
+      results.style.display = "block";
+      results.innerHTML = matches.slice(0, 8).map(m => `
+          ="#${m.catId}" data-cat="${m.catId}">
+          <div class="row">
+            <span class="pill">${escapeHtml(m.catTitle)}</span>
+            <div>
+              <p class="result-title">${escapeHtml(m.item)}</p>
+              <p class="result-sub">Click to open the category list.</p>
+            </div>
+          </div>
+        </a>
+      `).join("");
+
+      // clicking a result opens the category
+      results.querySelectorAll("a[data-cat]").forEach(a => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          openCategory(a.dataset.cat);
+        });
+      });
+    }
+
+    // Helpers
+    function escapeHtml(str){
+      return str.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+    }
+    function escapeQuotes(str){
+      return str.replaceAll('"', '\\"').replaceAll("'", "\\'");
+    }
+
+    // Events
+    input.addEventListener("input", searchFoods);
+    searchBtn.addEventListener("click", searchFoods);
+    input.addEventListener("keydown", (e) => {
+      if(e.key === "Enter") searchFoods();
+    });
+
+    // Init
+    renderGrid();
+    // ===== Fun Facts Data (uses your images folder) =====
+const FUNFACTS = [
+  {
+    title: "French Fries",
+    img: "images/funfacts/fries.jpg",
+    text: "When potatoes are fried at very high temperatures, they can form a compound called acrylamide, which scientists study for possible health risks."
+  },
+  {
+    title: "Soft Drinks",
+    img: "images/funfacts/soda.jpg",
+    text: "Liquid sugar doesn’t make you feel as full as solid food, which is why drinking soda can lead to more calories consumed without realizing it."
+  },
+  {
+    title: "Instant Noodles",
+    img: "images/funfacts/noodles.jpg",
+    text: "Instant noodles are often pre-fried before packaging, which is one reason they cook so quickly with just hot water."
+  },
+  {
+    title: "Pizza",
+    img: "images/funfacts/pizza.jpg",
+    text: "Pizza combines refined carbs, fats, and salt — a mix that strongly activates the brain’s reward system, making it easy to overeat."
+  },
+  {
+    title: "Ice Cream",
+    img: "images/funfacts/icecream.jpg",
+    text: "Cold temperatures reduce how sweet we taste food, so ice cream often contains more sugar than people expect."
+  }
+];
+
+// ===== Fun Facts Carousel Logic =====
+const ffTrack = document.getElementById("ffTrack");
+const ffViewport = document.getElementById("ffViewport");
+const ffPrev = document.getElementById("ffPrev");
+const ffNext = document.getElementById("ffNext");
+
+let ffTimer = null;
+const AUTO_MS = 30000;
+
+// Build cards with clones for infinite loop illusion
+function buildFunFacts(){
+  ffTrack.innerHTML = "";
+
+  const makeCard = (f) => `
+    <div class="ff-card">
+      <div class="ff-img">
+        <img src="${f.img}" alt="${escapeHtml(f.title)}">
+      </div>
+      <div class="ff-body">
+        <span class="ff-badge">FUN FACT!</span>
+        <div class="ff-title">${escapeHtml(f.title)}</div>
+        <p class="ff-text">${escapeHtml(f.text)}</p>
+      </div>
+    </div>
+  `;
+
+  // Clone last and first to allow seamless looping
+  const first = FUNFACTS[0];
+  const last = FUNFACTS[FUNFACTS.length - 1];
+
+  ffTrack.insertAdjacentHTML("beforeend", makeCard(last));      // clone last at start
+  FUNFACTS.forEach(f => ffTrack.insertAdjacentHTML("beforeend", makeCard(f)));
+  ffTrack.insertAdjacentHTML("beforeend", makeCard(first));     // clone first at end
+
+  // After rendering, jump to the first real card
+  requestAnimationFrame(() => {
+    scrollToIndex(1, false);
+  });
+}
+
+// Scroll helper (index includes clones)
+function scrollToIndex(index, smooth=true){
+  const width = ffViewport.clientWidth;
+  ffViewport.scrollTo({
+    left: width * index,
+    behavior: smooth ? "smooth" : "auto"
+  });
+}
+
+// Get current closest index
+function getClosestIndex(){
+  const width = ffViewport.clientWidth;
+  return Math.round(ffViewport.scrollLeft / width);
+}
+
+function nextFact(){
+  const idx = getClosestIndex();
+  scrollToIndex(idx + 1, true);
+}
+
+function prevFact(){
+  const idx = getClosestIndex();
+  scrollToIndex(idx - 1, true);
+}
+
+function resetAuto(){
+  if(ffTimer) clearInterval(ffTimer);
+  ffTimer = setInterval(() => {
+    nextFact();
+  }, AUTO_MS);
+}
+
+// Handle infinite loop “teleport” when reaching clones
+function handleLoop(){
+  const idx = getClosestIndex();
+
+  // 0 = clone of last
+  // lastIndex = clone of first
+  const lastIndex = ffTrack.children.length - 1;
+
+  if(idx === 0){
+    // jump to last real card
+    scrollToIndex(FUNFACTS.length, false);
+  } else if(idx === lastIndex){
+    // jump to first real card
+    scrollToIndex(1, false);
+  }
+}
+
+// Events
+ffNext.addEventListener("click", () => {
+  nextFact();
+  resetAuto();
+});
+
+ffPrev.addEventListener("click", () => {
+  prevFact();
+  resetAuto();
+});
+
+// When user scrolls by touchpad/swipe, keep loop working + reset timer
+let scrollTimeout = null;
+ffViewport.addEventListener("scroll", () => {
+  if(scrollTimeout) clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    handleLoop();
+    resetAuto();
+  }, 120);
+});
+
+// Init fun facts
+buildFunFacts();
+resetAuto();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

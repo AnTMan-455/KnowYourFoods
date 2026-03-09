@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shawarma | KnowYourFoods</title>
+
+  <style>
+    :root{
+      --green:#1f7a4c;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --soft:#f7faf8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background:#fff;
+    }
+    .topbar{
+      position: sticky;
+      top:0;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .topbar-inner{
+      max-width: 1000px;
+      margin:0 auto;
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:10px;}
+    .brand img{
+      width:40px;height:40px;border-radius:999px;object-fit:cover;
+      border:2px solid #d1fae5;
+    }
+    .brand b{color:var(--green)}
+    .crumbs{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:center;}
+    .crumbs a{color:var(--green);text-decoration:none;font-weight:800}
+    .crumbs a:hover{text-decoration:underline}
+
+    .container{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 22px 16px 70px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      overflow:hidden;
+    }
+    .hero-img{
+      height: 220px;
+      background: linear-gradient(135deg, #f5ead7, #ffffff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 70px;
+    }
+    .hero-body{padding:16px;}
+    h1{margin:0 0 8px;font-size:34px;}
+    p{margin:0;color:var(--muted);line-height:1.7;}
+
+    .badges{padding:16px;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background: var(--soft);
+      font-size:13px;font-weight:800;color:#14532d;
+      white-space:nowrap;
+    }
+
+    .section{padding:16px;margin-top:16px;}
+    .section h2{margin:0 0 10px;font-size:20px;color:var(--green);}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      border:1px solid var(--line);
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+    }
+    th,td{
+      padding:12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      font-size:14px;
+    }
+    th{background:var(--soft);font-weight:900;}
+    tr:last-child td{border-bottom:none;}
+
+    .note{margin-top:10px;font-size:13px;color:var(--muted);}
+    .tip{
+      margin-top:12px;
+      padding:12px 14px;
+      background:#e9fff0;
+      border:1px solid #a7f3d0;
+      border-radius:12px;
+      color:#14532d;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .footer{
+      margin-top: 26px;
+      border-top:1px solid var(--line);
+      padding-top: 16px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:30px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="images/logo.png" alt="KnowYourFoods logo">
+        <div>
+          <b>KnowYourFoods</b><br>
+          <span style="font-size:12px;color:var(--muted);">Raising Awareness of Everyday Foods and Healthier Alternatives</span>
+        </div>
+      </div>
+
+      <div class="crumbs">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Shawarma</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="grid">
+      <div class="card">
+        <div class="hero-img">🌯</div>
+        <div class="hero-body">
+          <h1>Shawarma</h1>
+          <p>
+            Shawarma is a popular wrap made with sliced meat, vegetables, and sauces
+            inside flatbread. It can be flavorful and filling, but shawarma with lots of mayo
+            is usually higher in calories, fat, and sodium because of the extra sauce.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="badges">
+          <div class="badge">🥄 Extra Mayo</div>
+          <div class="badge">🧂 Often High Sodium</div>
+          <div class="badge">🧈 Higher Fat</div>
+          <div class="badge">🔥 Moderate–High Calories</div>
+          <div class="badge">✅ Better Choice: Less Mayo + More Veggies</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section">
+      <h2>What is Shawarma?</h2>
+      <p>
+        Shawarma is a wrap commonly filled with seasoned meat such as chicken or beef,
+        along with vegetables like lettuce, onions, and tomatoes. It is often finished
+        with sauces such as garlic sauce or mayonnaise. When a shawarma has a lot of mayo,
+        the taste becomes richer, but the meal also becomes much heavier in fat and calories.
+      </p>
+    </div>
+
+    <div class="card section">
+      <h2>Nutritional Overview</h2>
+      <p class="note"><b>Typical Chicken Shawarma with Lots of Mayo (1 wrap, approximate values)</b></p>
+      <table>
+        <thead>
+          <tr><th>Nutrient</th><th>Approx. Amount</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Calories</td><td>450–650 kcal</td></tr>
+          <tr><td>Protein</td><td>18–28 g</td></tr>
+          <tr><td>Total Fat</td><td>20–35 g</td></tr>
+          <tr><td>Saturated Fat</td><td>5–9 g</td></tr>
+          <tr><td>Carbohydrates</td><td>35–50 g</td></tr>
+          <tr><td>Sugar</td><td>3–6 g</td></tr>
+          <tr><td>Sodium</td><td>800–1200 mg</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><b>Note:</b> The extra mayonnaise is one of the main reasons the calories and fat can become much higher.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Calories Comparison</h2>
+      <table>
+        <thead>
+          <tr><th>Food Option</th><th>Calories (Approx.)</th><th>Why it’s better/worse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🌯 Shawarma with lots of mayo</td><td>450–650 kcal</td><td>Higher fat and calories because of extra sauce</td></tr>
+          <tr><td>🌯 Shawarma with less mayo</td><td>350–500 kcal</td><td>Lower calories while still filling</td></tr>
+          <tr><td>🥪 Grilled chicken sandwich</td><td>300–450 kcal</td><td>Can be leaner depending on sauces</td></tr>
+          <tr><td>🥗 Chicken rice bowl</td><td>350–500 kcal</td><td>Often easier to control sauce and portion</td></tr>
+        </tbody>
+      </table>
+      <div class="tip"><b>Tip:</b> The biggest calorie increase in shawarma often comes from <b>extra mayo and heavy sauces</b>. Asking for less mayo can make a big difference.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Health Considerations</h2>
+      <p>
+        Shawarma can provide protein and be satisfying, but versions with lots of mayo
+        may contain a large amount of fat and sodium. Eating it occasionally is fine,
+        but choosing more vegetables and less sauce can make it a better everyday option.
+      </p>
+      <div class="tip"><b>Balanced eating tip:</b> Try shawarma with less mayo, more vegetables, and water instead of sugary drinks to make the meal lighter.</div>
+    </div>
+
+    <div class="footer">© 2026 KnowYourFoods.com | Adventist Academy Cebu</div>
+  </div>
+</body>
+</html>

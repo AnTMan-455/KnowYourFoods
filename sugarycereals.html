@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sugary Cereals | KnowYourFoods</title>
+
+  <style>
+    :root{
+      --green:#1f7a4c;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --soft:#f7faf8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background:#fff;
+    }
+    .topbar{
+      position: sticky;
+      top:0;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .topbar-inner{
+      max-width: 1000px;
+      margin:0 auto;
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:10px;}
+    .brand img{
+      width:40px;height:40px;border-radius:999px;object-fit:cover;
+      border:2px solid #d1fae5;
+    }
+    .brand b{color:var(--green)}
+    .crumbs{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:center;}
+    .crumbs a{color:var(--green);text-decoration:none;font-weight:800}
+    .crumbs a:hover{text-decoration:underline}
+
+    .container{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 22px 16px 70px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      overflow:hidden;
+    }
+    .hero-img{
+      height: 220px;
+      background: linear-gradient(135deg, #fff2cc, #ffffff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 70px;
+    }
+    .hero-body{padding:16px;}
+    h1{margin:0 0 8px;font-size:34px;}
+    p{margin:0;color:var(--muted);line-height:1.7;}
+
+    .badges{padding:16px;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background: var(--soft);
+      font-size:13px;font-weight:800;color:#14532d;
+      white-space:nowrap;
+    }
+
+    .section{padding:16px;margin-top:16px;}
+    .section h2{margin:0 0 10px;font-size:20px;color:var(--green);}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      border:1px solid var(--line);
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+    }
+    th,td{
+      padding:12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      font-size:14px;
+    }
+    th{background:var(--soft);font-weight:900;}
+    tr:last-child td{border-bottom:none;}
+
+    .note{margin-top:10px;font-size:13px;color:var(--muted);}
+    .tip{
+      margin-top:12px;
+      padding:12px 14px;
+      background:#e9fff0;
+      border:1px solid #a7f3d0;
+      border-radius:12px;
+      color:#14532d;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .footer{
+      margin-top: 26px;
+      border-top:1px solid var(--line);
+      padding-top: 16px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:30px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="images/logo.png" alt="KnowYourFoods logo">
+        <div>
+          <b>KnowYourFoods</b><br>
+          <span style="font-size:12px;color:var(--muted);">Raising Awareness of Everyday Foods and Healthier Alternatives</span>
+        </div>
+      </div>
+
+      <div class="crumbs">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Sugary Cereals</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="grid">
+      <div class="card">
+        <div class="hero-img">🥣</div>
+        <div class="hero-body">
+          <h1>Sugary Cereals</h1>
+          <p>
+            Sugary cereals are breakfast cereals that contain added sugar
+            to enhance flavor. They are often marketed to children and can
+            taste sweet and appealing, but many varieties contain large
+            amounts of sugar and refined grains.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="badges">
+          <div class="badge">🍬 High Sugar</div>
+          <div class="badge">🍞 Refined Grains</div>
+          <div class="badge">🔥 Moderate Calories</div>
+          <div class="badge">⚙️ Processed Food</div>
+          <div class="badge">✅ Better Choice: Whole Grain Cereals</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section">
+      <h2>What are Sugary Cereals?</h2>
+      <p>
+        Sugary cereals are breakfast cereals that contain added sugars,
+        flavorings, and sometimes artificial colors. While they are
+        convenient and widely consumed, many of these cereals contain
+        more sugar than whole grain alternatives.
+      </p>
+    </div>
+
+    <div class="card section">
+      <h2>Nutritional Overview</h2>
+      <p class="note"><b>Typical Sugary Cereal (1 serving, approx. values)</b></p>
+      <table>
+        <thead>
+          <tr><th>Nutrient</th><th>Approx. Amount</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Calories</td><td>120–180 kcal</td></tr>
+          <tr><td>Protein</td><td>2–4 g</td></tr>
+          <tr><td>Total Fat</td><td>1–3 g</td></tr>
+          <tr><td>Saturated Fat</td><td>0–1 g</td></tr>
+          <tr><td>Carbohydrates</td><td>25–35 g</td></tr>
+          <tr><td>Sugar</td><td>10–18 g</td></tr>
+          <tr><td>Sodium</td><td>150–300 mg</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><b>Note:</b> Some cereals may contain more sugar depending on brand and flavor.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Calories Comparison</h2>
+      <table>
+        <thead>
+          <tr><th>Food Option</th><th>Calories (Approx.)</th><th>Why it’s better/worse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🥣 Sugary cereal</td><td>120–180 kcal</td><td>Higher sugar content</td></tr>
+          <tr><td>🌾 Whole grain cereal</td><td>120–160 kcal</td><td>More fiber and nutrients</td></tr>
+          <tr><td>🍎 Oatmeal with fruit</td><td>150–200 kcal</td><td>Higher fiber and natural sweetness</td></tr>
+          <tr><td>🥗 Yogurt with granola</td><td>180–250 kcal</td><td>More protein and balanced nutrients</td></tr>
+        </tbody>
+      </table>
+      <div class="tip"><b>Tip:</b> Choosing cereals with lower sugar and higher fiber can help create a healthier breakfast.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Health Considerations</h2>
+      <p>
+        Sugary cereals can be enjoyable occasionally, but frequent
+        consumption may contribute to high sugar intake. Choosing
+        whole grain cereals and adding fresh fruits can provide a
+        more balanced and nutritious breakfast.
+      </p>
+      <div class="tip"><b>Balanced eating tip:</b> Look for cereals with less than 10g of sugar per serving.</div>
+    </div>
+
+    <div class="footer">© 2026 KnowYourFoods.com | Adventist Academy Cebu</div>
+  </div>
+</body>
+</html>

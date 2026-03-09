@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>French Fries | KnowYourFoods</title>
+
+<style>
+:root{
+  --green:#1f7a4c;
+  --ink:#111827;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --soft:#f7faf8;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#fff;
+  color:var(--ink);
+}
+
+.topbar{
+  position:sticky;
+  top:0;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.topbar-inner{
+  max-width:1000px;
+  margin:auto;
+  padding:12px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.brand{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.brand img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+.brand b{color:var(--green)}
+
+.crumbs{
+  font-size:14px;
+  color:var(--muted);
+}
+
+.crumbs a{
+  color:var(--green);
+  text-decoration:none;
+  font-weight:800;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:24px 16px 60px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:16px;
+}
+
+.card{
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.08);
+  background:#fff;
+}
+
+.hero-img{
+  height:200px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:70px;
+  background:linear-gradient(135deg,#dff5e1,#fff);
+}
+
+.hero-body{padding:16px}
+
+.badges{
+  padding:16px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.badge{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:var(--soft);
+  font-weight:700;
+  font-size:13px;
+}
+
+.section{
+  padding:16px;
+  margin-top:16px;
+}
+
+.section h2{
+  color:var(--green);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+}
+
+th,td{
+  padding:12px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+}
+
+th{
+  background:var(--soft);
+}
+
+.tip{
+  margin-top:12px;
+  padding:12px;
+  background:#e9fff0;
+  border:1px solid #a7f3d0;
+  border-radius:10px;
+}
+
+.footer{
+  margin-top:30px;
+  border-top:1px solid var(--line);
+  padding-top:16px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+@media(max-width:860px){
+.grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+<div class="topbar-inner">
+
+<div class="brand">
+<img src="images/logo.png">
+<div>
+<b>KnowYourFoods</b><br>
+<span style="font-size:12px;color:var(--muted)">Raising Awareness of Everyday Foods</span>
+</div>
+</div>
+
+<div class="crumbs">
+<a href="index.html">Home</a> › French Fries
+</div>
+
+</div>
+</div>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card">
+<div class="hero-img">🍟</div>
+
+<div class="hero-body">
+<h1>French Fries</h1>
+
+<p>
+French fries are deep-fried potato strips that are popular around the world.
+While potatoes themselves contain nutrients, deep frying adds large amounts of oil and calories.
+Regular consumption of fried foods may contribute to weight gain and other health concerns.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="badges">
+<div class="badge">🔥 High Calories</div>
+<div class="badge">🧈 High Fat</div>
+<div class="badge">🧂 High Sodium</div>
+<div class="badge">🍟 Deep Fried</div>
+<div class="badge">✅ Better Choice: Baked Fries</div>
+</div>
+</div>
+
+</div>
+
+<div class="card section">
+
+<h2>Nutritional Overview</h2>
+
+<table>
+<tr>
+<th>Nutrient</th>
+<th>Approx Amount (Medium Serving)</th>
+</tr>
+
+<tr>
+<td>Calories</td>
+<td>300–400 kcal</td>
+</tr>
+
+<tr>
+<td>Total Fat</td>
+<td>15–20 g</td>
+</tr>
+
+<tr>
+<td>Saturated Fat</td>
+<td>3–5 g</td>
+</tr>
+
+<tr>
+<td>Carbohydrates</td>
+<td>40–50 g</td>
+</tr>
+
+<tr>
+<td>Protein</td>
+<td>4–6 g</td>
+</tr>
+
+<tr>
+<td>Sodium</td>
+<td>250–400 mg</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card section">
+
+<h2>Comparison: Fries vs Healthier Options</h2>
+
+<table>
+
+<tr>
+<th>Food</th>
+<th>Calories</th>
+<th>Notes</th>
+</tr>
+
+<tr>
+<td>🍟 Fast-food fries</td>
+<td>300–400 kcal</td>
+<td>Deep fried in oil</td>
+</tr>
+
+<tr>
+<td>🥔 Baked potato</td>
+<td>160–200 kcal</td>
+<td>Less added fat</td>
+</tr>
+
+<tr>
+<td>🌬️ Air-fried fries</td>
+<td>200–250 kcal</td>
+<td>Uses less oil</td>
+</tr>
+
+<tr>
+<td>🥗 Salad side</td>
+<td>80–150 kcal</td>
+<td>More fiber and nutrients</td>
+</tr>
+
+</table>
+
+<div class="tip">
+Tip: Choosing baked or air-fried potatoes can significantly reduce fat intake while still providing similar flavor.
+</div>
+
+</div>
+
+<div class="card section">
+
+<h2>Health Considerations</h2>
+
+<p>
+Although potatoes contain potassium and vitamins, deep frying increases calories and fat.
+Eating fries occasionally is fine, but frequent intake—especially with sugary drinks and burgers—can contribute to unhealthy dietary patterns.
+</p>
+
+</div>
+
+<div class="footer">
+© 2026 KnowYourFoods.com
+</div>
+
+</div>
+
+</body>
+</html>

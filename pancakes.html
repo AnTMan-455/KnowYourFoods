@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pancakes with Syrup | KnowYourFoods</title>
+
+  <style>
+    :root{
+      --green:#1f7a4c;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --soft:#f7faf8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background:#fff;
+    }
+    .topbar{
+      position: sticky;
+      top:0;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .topbar-inner{
+      max-width: 1000px;
+      margin:0 auto;
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:10px;}
+    .brand img{
+      width:40px;height:40px;border-radius:999px;object-fit:cover;
+      border:2px solid #d1fae5;
+    }
+    .brand b{color:var(--green)}
+    .crumbs{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:center;}
+    .crumbs a{color:var(--green);text-decoration:none;font-weight:800}
+    .crumbs a:hover{text-decoration:underline}
+
+    .container{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 22px 16px 70px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      overflow:hidden;
+    }
+    .hero-img{
+      height: 220px;
+      background: linear-gradient(135deg, #fff0d6, #ffffff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 70px;
+    }
+    .hero-body{padding:16px;}
+    h1{margin:0 0 8px;font-size:34px;}
+    p{margin:0;color:var(--muted);line-height:1.7;}
+
+    .badges{padding:16px;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background: var(--soft);
+      font-size:13px;font-weight:800;color:#14532d;
+      white-space:nowrap;
+    }
+
+    .section{padding:16px;margin-top:16px;}
+    .section h2{margin:0 0 10px;font-size:20px;color:var(--green);}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      border:1px solid var(--line);
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+    }
+    th,td{
+      padding:12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      font-size:14px;
+    }
+    th{background:var(--soft);font-weight:900;}
+    tr:last-child td{border-bottom:none;}
+
+    .note{margin-top:10px;font-size:13px;color:var(--muted);}
+    .tip{
+      margin-top:12px;
+      padding:12px 14px;
+      background:#e9fff0;
+      border:1px solid #a7f3d0;
+      border-radius:12px;
+      color:#14532d;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .footer{
+      margin-top: 26px;
+      border-top:1px solid var(--line);
+      padding-top: 16px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:30px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="images/logo.png" alt="KnowYourFoods logo">
+        <div>
+          <b>KnowYourFoods</b><br>
+          <span style="font-size:12px;color:var(--muted);">Raising Awareness of Everyday Foods and Healthier Alternatives</span>
+        </div>
+      </div>
+
+      <div class="crumbs">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Pancakes with Syrup</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="grid">
+      <div class="card">
+        <div class="hero-img">🥞</div>
+        <div class="hero-body">
+          <h1>Pancakes with Syrup</h1>
+          <p>
+            Pancakes are a popular breakfast food made from flour, eggs,
+            milk, and sugar. They are often served with syrup, butter,
+            or sweet toppings. While they are tasty and comforting,
+            pancakes with syrup can contain a large amount of sugar
+            and refined carbohydrates.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="badges">
+          <div class="badge">🍬 High Sugar (Syrup)</div>
+          <div class="badge">🍞 Refined Flour</div>
+          <div class="badge">🧈 Added Butter</div>
+          <div class="badge">🔥 Moderate–High Calories</div>
+          <div class="badge">✅ Better Choice: Whole Grain Pancakes</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section">
+      <h2>What are Pancakes?</h2>
+      <p>
+        Pancakes are flat cakes cooked on a griddle or pan using a batter
+        made from flour, eggs, milk, and baking powder. They are commonly
+        eaten with syrup, butter, whipped cream, or fruit toppings.
+        Many commercial syrups contain added sugars and artificial flavors.
+      </p>
+    </div>
+
+    <div class="card section">
+      <h2>Nutritional Overview</h2>
+      <p class="note"><b>Typical Pancakes with Syrup (3 pancakes + syrup)</b></p>
+      <table>
+        <thead>
+          <tr><th>Nutrient</th><th>Approx. Amount</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Calories</td><td>350–500 kcal</td></tr>
+          <tr><td>Protein</td><td>6–10 g</td></tr>
+          <tr><td>Total Fat</td><td>10–15 g</td></tr>
+          <tr><td>Saturated Fat</td><td>3–6 g</td></tr>
+          <tr><td>Carbohydrates</td><td>60–80 g</td></tr>
+          <tr><td>Sugar</td><td>25–40 g</td></tr>
+          <tr><td>Sodium</td><td>400–600 mg</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><b>Note:</b> Flavored syrups can significantly increase sugar content.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Calories Comparison</h2>
+      <table>
+        <thead>
+          <tr><th>Food Option</th><th>Calories (Approx.)</th><th>Why it’s better/worse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🥞 Pancakes with syrup</td><td>350–500 kcal</td><td>High sugar from syrup</td></tr>
+          <tr><td>🥞 Whole grain pancakes</td><td>300–420 kcal</td><td>Higher fiber</td></tr>
+          <tr><td>🍓 Pancakes with fruit</td><td>280–380 kcal</td><td>Natural sweetness</td></tr>
+          <tr><td>🥣 Oatmeal with fruit</td><td>200–300 kcal</td><td>More fiber and nutrients</td></tr>
+        </tbody>
+      </table>
+      <div class="tip"><b>Tip:</b> Using fruit instead of syrup can help reduce added sugar.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Health Considerations</h2>
+      <p>
+        Pancakes can be enjoyed occasionally, but frequent consumption
+        with sugary syrups may increase sugar intake. Choosing whole grain
+        pancakes and adding fruits instead of heavy syrups can provide
+        a more balanced breakfast.
+      </p>
+      <div class="tip"><b>Balanced eating tip:</b> Pair pancakes with eggs or yogurt to add protein and balance the meal.</div>
+    </div>
+
+    <div class="footer">© 2026 KnowYourFoods.com | Adventist Academy Cebu</div>
+  </div>
+</body>
+</html>

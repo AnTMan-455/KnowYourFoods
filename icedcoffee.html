@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iced Coffee with Syrup | KnowYourFoods</title>
+
+  <style>
+    :root{
+      --green:#1f7a4c;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --soft:#f7faf8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background:#fff;
+    }
+    .topbar{
+      position: sticky;
+      top:0;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .topbar-inner{
+      max-width: 1000px;
+      margin:0 auto;
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:10px;}
+    .brand img{
+      width:40px;height:40px;border-radius:999px;object-fit:cover;
+      border:2px solid #d1fae5;
+    }
+    .brand b{color:var(--green)}
+    .crumbs{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:center;}
+    .crumbs a{color:var(--green);text-decoration:none;font-weight:800}
+    .crumbs a:hover{text-decoration:underline}
+
+    .container{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 22px 16px 70px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      overflow:hidden;
+    }
+    .hero-img{
+      height: 220px;
+      background: linear-gradient(135deg, #ede9fe, #ffffff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 70px;
+    }
+    .hero-body{padding:16px;}
+    h1{margin:0 0 8px;font-size:34px;}
+    p{margin:0;color:var(--muted);line-height:1.7;}
+
+    .badges{padding:16px;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background: var(--soft);
+      font-size:13px;font-weight:800;color:#14532d;
+      white-space:nowrap;
+    }
+
+    .section{padding:16px;margin-top:16px;}
+    .section h2{margin:0 0 10px;font-size:20px;color:var(--green);}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      border:1px solid var(--line);
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+    }
+    th,td{
+      padding:12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      font-size:14px;
+    }
+    th{background:var(--soft);font-weight:900;}
+    tr:last-child td{border-bottom:none;}
+
+    .note{margin-top:10px;font-size:13px;color:var(--muted);}
+    .tip{
+      margin-top:12px;
+      padding:12px 14px;
+      background:#e9fff0;
+      border:1px solid #a7f3d0;
+      border-radius:12px;
+      color:#14532d;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .footer{
+      margin-top: 26px;
+      border-top:1px solid var(--line);
+      padding-top: 16px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:30px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="images/logo.png" alt="KnowYourFoods logo">
+        <div>
+          <b>KnowYourFoods</b><br>
+          <span style="font-size:12px;color:var(--muted);">Raising Awareness of Everyday Foods and Healthier Alternatives</span>
+        </div>
+      </div>
+
+      <div class="crumbs">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Iced Coffee with Syrup</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="grid">
+      <div class="card">
+        <div class="hero-img">☕</div>
+        <div class="hero-body">
+          <h1>Iced Coffee with Syrup</h1>
+          <p>
+            Iced coffee with syrup is a cold coffee beverage often mixed with
+            milk, cream, and flavored syrups such as vanilla, caramel, or
+            chocolate. While refreshing, the added syrups and sweeteners can
+            significantly increase sugar and calorie content.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="badges">
+          <div class="badge">🍬 High Sugar</div>
+          <div class="badge">☕ Contains Caffeine</div>
+          <div class="badge">🥛 Added Milk or Cream</div>
+          <div class="badge">🔥 Moderate–High Calories</div>
+          <div class="badge">✅ Better Choice: Unsweetened Iced Coffee</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section">
+      <h2>What is Iced Coffee with Syrup?</h2>
+      <p>
+        Iced coffee is brewed coffee served over ice, often mixed with milk
+        or cream. Many coffee drinks include flavored syrups to enhance
+        sweetness and taste. However, these syrups may contain large
+        amounts of added sugar.
+      </p>
+    </div>
+
+    <div class="card section">
+      <h2>Nutritional Overview</h2>
+      <p class="note"><b>Typical Iced Coffee with Syrup (1 medium cup)</b></p>
+      <table>
+        <thead>
+          <tr><th>Nutrient</th><th>Approx. Amount</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Calories</td><td>180–300 kcal</td></tr>
+          <tr><td>Protein</td><td>2–5 g</td></tr>
+          <tr><td>Total Fat</td><td>5–12 g</td></tr>
+          <tr><td>Saturated Fat</td><td>3–7 g</td></tr>
+          <tr><td>Carbohydrates</td><td>25–40 g</td></tr>
+          <tr><td>Sugar</td><td>20–35 g</td></tr>
+          <tr><td>Sodium</td><td>50–150 mg</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><b>Note:</b> Extra syrups, whipped cream, or flavored creamers can increase sugar and calorie levels.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Calories Comparison</h2>
+      <table>
+        <thead>
+          <tr><th>Drink Option</th><th>Calories (Approx.)</th><th>Why it’s better/worse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>☕ Iced coffee with syrup</td><td>180–300 kcal</td><td>High sugar from syrups</td></tr>
+          <tr><td>☕ Unsweetened iced coffee</td><td>5–15 kcal</td><td>Very low calories</td></tr>
+          <tr><td>🥛 Coffee with small milk</td><td>40–80 kcal</td><td>Lower sugar</td></tr>
+          <tr><td>💧 Water</td><td>0 kcal</td><td>No sugar or calories</td></tr>
+        </tbody>
+      </table>
+      <div class="tip"><b>Tip:</b> Ordering iced coffee with less syrup or no syrup can reduce sugar intake.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Health Considerations</h2>
+      <p>
+        Coffee itself contains antioxidants and can be part of a balanced diet,
+        but sweet syrups and creamers can add large amounts of sugar. Choosing
+        less sweet versions may help reduce calorie intake.
+      </p>
+      <div class="tip"><b>Balanced eating tip:</b> Try iced coffee with minimal syrup or natural milk for a lighter option.</div>
+    </div>
+
+    <div class="footer">© 2026 KnowYourFoods.com | Adventist Academy Cebu</div>
+  </div>
+</body>
+</html>

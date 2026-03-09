@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Street Vendor Fries | KnowYourFoods</title>
+
+  <style>
+    :root{
+      --green:#1f7a4c;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --soft:#f7faf8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background:#fff;
+    }
+    .topbar{
+      position: sticky;
+      top:0;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .topbar-inner{
+      max-width: 1000px;
+      margin:0 auto;
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:10px;}
+    .brand img{
+      width:40px;height:40px;border-radius:999px;object-fit:cover;
+      border:2px solid #d1fae5;
+    }
+    .brand b{color:var(--green)}
+    .crumbs{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:center;}
+    .crumbs a{color:var(--green);text-decoration:none;font-weight:800}
+    .crumbs a:hover{text-decoration:underline}
+
+    .container{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 22px 16px 70px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      overflow:hidden;
+    }
+    .hero-img{
+      height: 220px;
+      background: linear-gradient(135deg, #fff3cd, #ffffff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 70px;
+    }
+    .hero-body{padding:16px;}
+    h1{margin:0 0 8px;font-size:34px;}
+    p{margin:0;color:var(--muted);line-height:1.7;}
+
+    .badges{padding:16px;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background: var(--soft);
+      font-size:13px;font-weight:800;color:#14532d;
+      white-space:nowrap;
+    }
+
+    .section{padding:16px;margin-top:16px;}
+    .section h2{margin:0 0 10px;font-size:20px;color:var(--green);}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      border:1px solid var(--line);
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+    }
+    th,td{
+      padding:12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      font-size:14px;
+    }
+    th{background:var(--soft);font-weight:900;}
+    tr:last-child td{border-bottom:none;}
+
+    .note{margin-top:10px;font-size:13px;color:var(--muted);}
+    .tip{
+      margin-top:12px;
+      padding:12px 14px;
+      background:#e9fff0;
+      border:1px solid #a7f3d0;
+      border-radius:12px;
+      color:#14532d;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .footer{
+      margin-top: 26px;
+      border-top:1px solid var(--line);
+      padding-top: 16px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:30px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="images/logo.png" alt="KnowYourFoods logo">
+        <div>
+          <b>KnowYourFoods</b><br>
+          <span style="font-size:12px;color:var(--muted);">Raising Awareness of Everyday Foods and Healthier Alternatives</span>
+        </div>
+      </div>
+
+      <div class="crumbs">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Street Vendor Fries</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="grid">
+      <div class="card">
+        <div class="hero-img">🍟</div>
+        <div class="hero-body">
+          <h1>Fries from Street Vendors</h1>
+          <p>
+            Street vendor fries are deep-fried potato strips commonly sold as
+            affordable snacks. They are often served with cheese powder,
+            sauces, or seasonings, making them flavorful but also high in
+            calories, sodium, and oil.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="badges">
+          <div class="badge">🧈 Deep Fried</div>
+          <div class="badge">🧂 High Sodium</div>
+          <div class="badge">🔥 High Calories</div>
+          <div class="badge">⚙️ Processed Seasonings</div>
+          <div class="badge">✅ Better Choice: Baked Potatoes</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section">
+      <h2>What are Street Vendor Fries?</h2>
+      <p>
+        Street fries are typically made from potatoes that are cut and deep-fried
+        in oil. They are popular in many places because they are cheap,
+        convenient, and tasty. However, the frying process adds a large
+        amount of oil, which increases calories and fat content.
+      </p>
+    </div>
+
+    <div class="card section">
+      <h2>Nutritional Overview</h2>
+      <p class="note"><b>Typical Serving (1 cup fries, approximate values)</b></p>
+      <table>
+        <thead>
+          <tr><th>Nutrient</th><th>Approx. Amount</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Calories</td><td>300–400 kcal</td></tr>
+          <tr><td>Protein</td><td>3–5 g</td></tr>
+          <tr><td>Total Fat</td><td>15–20 g</td></tr>
+          <tr><td>Saturated Fat</td><td>2–5 g</td></tr>
+          <tr><td>Carbohydrates</td><td>35–45 g</td></tr>
+          <tr><td>Sugar</td><td>1–3 g</td></tr>
+          <tr><td>Sodium</td><td>400–700 mg</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><b>Note:</b> Cheese powder or flavored seasonings can add extra sodium and calories.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Calories Comparison</h2>
+      <table>
+        <thead>
+          <tr><th>Food Option</th><th>Calories (Approx.)</th><th>Why it’s better/worse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🍟 Street vendor fries</td><td>300–400 kcal</td><td>Deep fried and high sodium</td></tr>
+          <tr><td>🥔 Baked potato wedges</td><td>180–250 kcal</td><td>Less oil</td></tr>
+          <tr><td>🥗 Vegetable snack</td><td>80–120 kcal</td><td>Lower calories and more fiber</td></tr>
+          <tr><td>🌽 Corn on the cob</td><td>120–150 kcal</td><td>Natural nutrients</td></tr>
+        </tbody>
+      </table>
+      <div class="tip"><b>Tip:</b> Baking or air-frying potatoes instead of deep frying can reduce oil and calories.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Health Considerations</h2>
+      <p>
+        Fries can be enjoyed occasionally, but frequent consumption of
+        deep-fried foods may contribute to high fat and sodium intake.
+        Choosing baked or grilled alternatives can help create a more
+        balanced diet.
+      </p>
+      <div class="tip"><b>Balanced eating tip:</b> If you eat fries, pair them with water and a protein source instead of sugary drinks.</div>
+    </div>
+
+    <div class="footer">© 2026 KnowYourFoods.com | Adventist Academy Cebu</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canned Meat | KnowYourFoods</title>
+
+  <style>
+    :root{
+      --green:#1f7a4c;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --soft:#f7faf8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background:#fff;
+    }
+    .topbar{
+      position: sticky;
+      top:0;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .topbar-inner{
+      max-width: 1000px;
+      margin:0 auto;
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:10px;}
+    .brand img{
+      width:40px;height:40px;border-radius:999px;object-fit:cover;
+      border:2px solid #d1fae5;
+    }
+    .brand b{color:var(--green)}
+    .crumbs{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:center;}
+    .crumbs a{color:var(--green);text-decoration:none;font-weight:800}
+    .crumbs a:hover{text-decoration:underline}
+
+    .container{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 22px 16px 70px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      overflow:hidden;
+    }
+    .hero-img{
+      height: 220px;
+      background: linear-gradient(135deg, #f0f8f3, #ffffff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 70px;
+    }
+    .hero-body{padding:16px;}
+    h1{margin:0 0 8px;font-size:34px;}
+    p{margin:0;color:var(--muted);line-height:1.7;}
+
+    .badges{padding:16px;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background: var(--soft);
+      font-size:13px;font-weight:800;color:#14532d;
+      white-space:nowrap;
+    }
+
+    .section{padding:16px;margin-top:16px;}
+    .section h2{margin:0 0 10px;font-size:20px;color:var(--green);}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      border:1px solid var(--line);
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+    }
+    th,td{
+      padding:12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      font-size:14px;
+    }
+    th{background:var(--soft);font-weight:900;}
+    tr:last-child td{border-bottom:none;}
+
+    .note{margin-top:10px;font-size:13px;color:var(--muted);}
+    .tip{
+      margin-top:12px;
+      padding:12px 14px;
+      background:#e9fff0;
+      border:1px solid #a7f3d0;
+      border-radius:12px;
+      color:#14532d;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .footer{
+      margin-top: 26px;
+      border-top:1px solid var(--line);
+      padding-top: 16px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:30px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="images/logo.png" alt="KnowYourFoods logo">
+        <div>
+          <b>KnowYourFoods</b><br>
+          <span style="font-size:12px;color:var(--muted);">Raising Awareness of Everyday Foods and Healthier Alternatives</span>
+        </div>
+      </div>
+
+      <div class="crumbs">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Canned Meat</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="grid">
+      <div class="card">
+        <div class="hero-img">🥫</div>
+        <div class="hero-body">
+          <h1>Canned Meat</h1>
+          <p>
+            Canned meats such as corned beef, luncheon meat, and other preserved meats
+            are popular because they are convenient and have a long shelf life. However,
+            they are often highly processed and contain large amounts of sodium and fat.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="badges">
+          <div class="badge">⚙️ Highly Processed</div>
+          <div class="badge">🧂 High Sodium</div>
+          <div class="badge">🧈 Saturated Fat</div>
+          <div class="badge">🥫 Long Shelf Life</div>
+          <div class="badge">✅ Better Choice: Fresh Lean Meat</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section">
+      <h2>What is Canned Meat?</h2>
+      <p>
+        Canned meat refers to meat products that are cooked, preserved,
+        and sealed in metal cans to extend shelf life. Examples include
+        corned beef, luncheon meat, and canned sausages. These products
+        are convenient for quick meals but usually contain preservatives
+        and high amounts of sodium.
+      </p>
+    </div>
+
+    <div class="card section">
+      <h2>Nutritional Overview</h2>
+      <p class="note"><b>Typical Canned Meat (100 g serving, approximate values)</b></p>
+      <table>
+        <thead>
+          <tr><th>Nutrient</th><th>Approx. Amount</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Calories</td><td>250–300 kcal</td></tr>
+          <tr><td>Protein</td><td>12–15 g</td></tr>
+          <tr><td>Total Fat</td><td>20–25 g</td></tr>
+          <tr><td>Saturated Fat</td><td>8–10 g</td></tr>
+          <tr><td>Carbohydrates</td><td>1–3 g</td></tr>
+          <tr><td>Sugar</td><td>0–1 g</td></tr>
+          <tr><td>Sodium</td><td>800–1200 mg</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><b>Note:</b> Many canned meats contain preservatives and high sodium levels.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Calories Comparison</h2>
+      <table>
+        <thead>
+          <tr><th>Food Option</th><th>Calories (Approx.)</th><th>Why it’s better/worse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🥫 Canned meat</td><td>250–300 kcal</td><td>Highly processed and high sodium</td></tr>
+          <tr><td>🍗 Grilled chicken</td><td>200–250 kcal</td><td>Lean protein and less processed</td></tr>
+          <tr><td>🐟 Fresh fish</td><td>180–250 kcal</td><td>High protein and healthy fats</td></tr>
+          <tr><td>🥗 Beans or legumes</td><td>150–220 kcal</td><td>High fiber and plant protein</td></tr>
+        </tbody>
+      </table>
+      <div class="tip"><b>Tip:</b> Choosing fresh meat or plant-based protein sources can help reduce sodium intake.</div>
+    </div>
+
+    <div class="card section">
+      <h2>Health Considerations</h2>
+      <p>
+        Canned meat can be convenient for quick meals, but frequent consumption
+        may increase sodium and fat intake. Eating fresh protein sources and
+        balancing meals with vegetables and whole foods can help support
+        healthier dietary habits.
+      </p>
+      <div class="tip"><b>Balanced eating tip:</b> If eating canned meat, try pairing it with vegetables and limiting additional salty foods.</div>
+    </div>
+
+    <div class="footer">© 2026 KnowYourFoods.com | Adventist Academy Cebu</div>
+  </div>
+</body>
+</html>
