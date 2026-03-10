@@ -743,21 +743,19 @@ return map[itemName] || "#";
       });
 
       if(matches.length === 0){
-  results.style.display = "block";
-  results.innerHTML = "<div class='search-result'>No foods found</div>";
-  return;
-}
-
-results.style.display = "block";
-
-results.innerHTML = matches.map(m => `
-  <div class="search-result">
-    <a href="#${m.catId}" data-cat="${m.catId}">
-      <span class="tag">${m.catTitle}</span>
-      <strong>${m.item}</strong>
-    </a>
-  </div>
-`).join("");
+        results.style.display = "block";
+        results.innerHTML = `
+          <a href="#">
+            <div class="row">
+              <span class="pill">No match</span>
+              <div>
+                <p class="result-title">No results found 😅</p>
+                <p class="result-sub">Try another keyword (example: burger, fries, milk tea).</p>
+              </div>
+            </div>
+          </a>
+        `;
+        return;
       }
 
       results.style.display = "block";
@@ -780,6 +778,7 @@ results.innerHTML = matches.map(m => `
           openCategory(a.dataset.cat);
         });
       });
+    }
 
     // Helpers
     function escapeHtml(str){
