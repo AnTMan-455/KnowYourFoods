@@ -759,17 +759,17 @@ return map[itemName] || "#";
       }
 
       results.style.display = "block";
-      results.innerHTML = matches.slice(0, 8).map(m => `
-          ="#${m.catId}" data-cat="${m.catId}">
-          <div class="row">
-            <span class="pill">${escapeHtml(m.catTitle)}</span>
-            <div>
-              <p class="result-title">${escapeHtml(m.item)}</p>
-              <p class="result-sub">Click to open the category list.</p>
-            </div>
-          </div>
-        </a>
-      `).join("");
+results.innerHTML = matches.slice(0, 8).map(m => `
+  <a href="#${m.catId}" data-cat="${m.catId}">
+    <div class="row">
+      <span class="pill">${escapeHtml(m.catTitle)}</span>
+      <div>
+        <p class="result-title">${escapeHtml(m.item)}</p>
+        <p class="result-sub">Click to open the category list.</p>
+      </div>
+    </div>
+  </a>
+`).join("");
 
       // clicking a result opens the category
       results.querySelectorAll("a[data-cat]").forEach(a => {
